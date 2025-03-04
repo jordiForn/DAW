@@ -1,0 +1,338 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9eccc;
+  color: #587d71;
+  margin: 0;
+  padding: 0;
+}
+
+.cart-page header,
+.form-page header,
+.login-page header,
+.signup-page header {
+  flex-direction: column;
+  height: auto;
+}
+.cart-page header a,
+.form-page header a,
+.login-page header a,
+.signup-page header a {
+  padding: 10px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #754668;
+  height: 100px;
+}
+header h1 {
+  color: white;
+}
+header h1:hover {
+  cursor: default;
+}
+header #admin-menu {
+  display: none;
+  background-color: #f9eccc;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 120px;
+  right: 20px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+header #admin-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+header #admin-menu li {
+  margin: 10px 0;
+}
+header #admin-menu li a {
+  text-decoration: none;
+  color: #587d71;
+  font-weight: bold;
+}
+header #admin-menu li a:hover {
+  color: #4daa57;
+}
+header #admin-menu.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  border: 1px solid #587d71;
+}
+header div {
+  display: flex;
+  gap: 30px;
+}
+header div a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+header div a:hover {
+  transform: translateY(-5px);
+  color: #4daa57;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container h2:hover {
+  cursor: default;
+}
+.container a {
+  text-decoration: none;
+  color: #587d71;
+  padding: 10px;
+  transition: border 0.3s ease-in-out;
+  font-weight: bold;
+  font-size: 18px;
+}
+.container a:hover {
+  border: 1px solid #587d71;
+  border-radius: 5px;
+  background-color: #b5dda4;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.product-category,
+.service-category {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #f9eccc;
+}
+
+#admin-menu {
+  display: none;
+  background-color: #f9eccc;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #4daa57;
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#admin-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#admin-menu ul li {
+  margin: 10px 0;
+}
+#admin-menu ul li a {
+  text-decoration: none;
+  color: #587d71;
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  transition: border 0.3s ease-in-out;
+}
+#admin-menu ul li a:hover {
+  color: #4daa57;
+  background-color: #b5dda4;
+}
+
+.cart a:hover {
+  color: inherit;
+  background-color: inherit;
+  border: none;
+}
+
+.toggle-button {
+  width: 100%;
+  background-color: #4daa57;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-size: 18px;
+}
+.toggle-button:hover {
+  background-color: #587d71;
+}
+
+.product-list,
+.service-garden,
+.service-pool {
+  display: none;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.product-list.active,
+.service-garden.active,
+.service-pool.active {
+  display: flex;
+}
+
+.product-card,
+.service-card {
+  background-color: #b5dda4;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.product-card img,
+.service-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.product-card h3,
+.service-card h3 {
+  color: #754668;
+  cursor: default;
+}
+.product-card p,
+.service-card p {
+  font-size: 14px;
+  color: #587d71;
+  cursor: default;
+}
+.product-card .price,
+.service-card .price {
+  font-weight: bold;
+  color: #4daa57;
+}
+
+button {
+  background-color: #4daa57;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+button:hover {
+  background-color: #587d71;
+}
+
+.cart {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  max-width: 500px;
+}
+.cart h2 {
+  text-align: center;
+  color: #754668;
+}
+.cart .cart-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #b5dda4;
+  padding: 10px 0;
+}
+.cart .cart-item span {
+  font-weight: bold;
+}
+
+.form-container {
+  background-color: #f9eccc;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.form-container label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #754668;
+}
+.form-container input,
+.form-container textarea {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #4daa57;
+  border-radius: 5px;
+}
+
+.confirm-btn {
+  background-color: #754668;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+.confirm-btn:hover {
+  background-color: #587d71;
+}
+
+.confirmation {
+  text-align: center;
+  padding: 20px;
+  background-color: #b5dda4;
+  color: #754668;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+/*# sourceMappingURL=styles.css.map */
